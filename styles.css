@@ -50,4 +50,21 @@ body {
     .profile {
       margin-bottom: 20px;
     }
-    
+
+      .hero {
+  background: url('sbhsb.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 0 1rem;
+}
+ 
+.hero h2 {
+  font-size: 3rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
