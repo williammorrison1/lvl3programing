@@ -148,4 +148,21 @@
       location.reload();
     }
  
+      // Auto-login
+    window.onload = () => {
+      const savedUser = localStorage.getItem("user");
+      if (savedUser) {
+        currentUser = savedUser;
+        const profile = localStorage.getItem(`${currentUser}_profile`);
+        if (profile) {
+          showMainApp();
+        } else {
+          showProfileSetup();
+        }
+      }
+    };
+  </script>
+    <footer>
+&copy; 2025 southland boys high school. All rights reserved.
+</footer>
 
