@@ -133,3 +133,19 @@
       displayGallery();
     }
 
+    function displayGallery() {
+      const artList = JSON.parse(localStorage.getItem(`${currentUser}_art`) || "[]");
+      gallery.innerHTML = "";
+      artList.forEach((img) => {
+        const imgEl = document.createElement("img");
+        imgEl.src = img;
+        gallery.appendChild(imgEl);
+      });
+    }
+ 
+    function logout() {
+      localStorage.removeItem("user");
+      location.reload();
+    }
+ 
+
