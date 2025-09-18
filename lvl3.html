@@ -116,4 +116,20 @@
       reader.readAsDataURL(file);
     });
 
-    
+    function showProfileSetup() {
+      authSection.classList.add("hidden");
+      profileSetup.classList.remove("hidden");
+    }
+ 
+    function showMainApp() {
+      profileSetup.classList.add("hidden");
+      mainApp.classList.remove("hidden");
+ 
+      const profile = JSON.parse(localStorage.getItem(`${currentUser}_profile`));
+      if (profile) {
+        profileImage.src = profile.profilePic;
+        userInfo.innerText = `${currentUser} | ${profile.school} | ${profile.bio}`;
+      }
+      displayGallery();
+    }
+
