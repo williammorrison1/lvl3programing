@@ -100,3 +100,18 @@
       };
       reader.readAsDataURL(profilePic);
     });
+
+     // Upload artwork
+    uploadForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const file = document.getElementById("artUpload").files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        const artList = JSON.parse(localStorage.getItem(`${currentUser}_art`) || "[]");
+        artList.push(reader.result);
+        localStorage.setItem(`${currentUser}_art`, JSON.stringify(artList));
+        displayGallery();
+      };
+      reader.readAsDataURL(file);
+    });
